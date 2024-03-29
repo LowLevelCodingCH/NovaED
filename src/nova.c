@@ -106,9 +106,11 @@ enum KEY_ACTION{
 void editorSetStatusMessage(const char *fmt, ...);
 
 /* C / C++ */
-char *C_HL_extensions[] = {".erl",".asm",".c",".h",".cpp",".hpp",".cc",".py",".rs",NULL};
+char *C_HL_extensions[] = {".lisp",".erl",".asm",".c",".h",".cpp",".hpp",".cc",".py",".rs",NULL};
 char *C_HL_keywords[] = {
 	/* C Keywords */
+	"==",
+	"(defun",
 	"auto","break","case","continue","default","do","else","enum",
 	"extern","for","goto","if","register","return","sizeof","static",
 	"struct","switch","typedef","union","volatile","while","NULL",
