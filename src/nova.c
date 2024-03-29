@@ -533,7 +533,7 @@ void editorUpdateRow(erow *row) {
     unsigned long long allocsize =
         (unsigned long long) row->size + tabs*8 + nonprint*9 + 1;
     if (allocsize > UINT32_MAX) {
-        printf("Some line of the edited file is too long for kilo\n");
+        printf("Some line of the edited file is too long for nova\n");
         exit(1);
     }
 
@@ -921,7 +921,7 @@ void editorRefreshScreen(void) {
     abAppend(&ab,"\x1b[0K",4);
     abAppend(&ab,"\x1b[7m",4);
     char status[80], rstatus[80];
-    int len = snprintf(status, sizeof(status), "%.20s - %d lines %s",
+    int len = snprintf(status, sizeof(status), "%.20s - %d lines %s - -UU-:**--File [NOVA]",
         E.filename, E.numrows, E.dirty ? "(modified)" : "");
     int rlen = snprintf(rstatus, sizeof(rstatus),
         "%d/%d",E.rowoff+E.cy+1,E.numrows);
@@ -1013,7 +1013,7 @@ void editorFind(int fd) {
                 E.coloff = saved_coloff; E.rowoff = saved_rowoff;
             }
             FIND_RESTORE_HL;
-            editorSetStatusMessage("~File [Nova]    0~00");
+            editorSetStatusMessage("~File [Nova] 0~00     ::     -UU-:**--");
             return;
         } else if (c == ARROW_RIGHT || c == ARROW_DOWN) {
             find_next = 1;
