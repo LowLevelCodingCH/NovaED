@@ -1,4 +1,4 @@
-#define KILO_VERSION "0.0.1:Test"
+#define NOVA_VERSION "0.0.1:Test"
 
 #ifdef __linux__
 #define _POSIX_C_SOURCE 200809L
@@ -906,7 +906,7 @@ void editorRefreshScreen(void) {
             if (E.numrows == 0 && y == E.screenrows/3) {
                 char welcome[80];
                 int welcomelen = snprintf(welcome,sizeof(welcome),
-                    "Nova editor -- verison %s\x1b[0K\r\n", KILO_VERSION);
+                    "Nova editor -- verison %s\x1b[0K\r\n", NOVA_VERSION);
                 int padding = (E.screencols-welcomelen)/2;
                 if (padding) {
                     abAppend(&ab,"~",1);
@@ -1021,10 +1021,10 @@ void editorSetStatusMessage(const char *fmt, ...) {
 
 /* =============================== Find mode ================================ */
 
-#define KILO_QUERY_LEN 256
+#define NOVA_QUERY_LEN 256
 
 void editorFind(int fd) {
-    char query[KILO_QUERY_LEN+1] = {0};
+    char query[NOVA_QUERY_LEN+1] = {0};
     int qlen = 0;
     int last_match = -1; /* Last line where a match was found. -1 for none. */
     int find_next = 0; /* if 1 search next, if -1 search prev. */
@@ -1065,7 +1065,7 @@ void editorFind(int fd) {
         } else if (c == ARROW_LEFT || c == ARROW_UP) {
             find_next = -1;
         } else if (isprint(c)) {
-            if (qlen < KILO_QUERY_LEN) {
+            if (qlen < NOVA_QUERY_LEN) {
                 query[qlen++] = c;
                 query[qlen] = '\0';
                 last_match = -1;
@@ -1196,11 +1196,11 @@ void editorMoveCursor(int key) {
 
 /* Process events arriving from the standard input, which is, the user
  * is typing stuff on the terminal. */
-#define KILO_QUIT_TIMES 1
+#define NOVA_QUIT_TIMES 1
 void editorProcessKeypress(int fd) {
     /* When the file is ggmodified, requires Ctrl-q to be pressed N times
      * before actually quitting. */
-    static int quit_times = KILO_QUIT_TIMES;
+    static int quit_times = NOVA_QUIT_TIMES;
 
     int c = editorReadKey(fd);
     switch(c) {
@@ -1271,7 +1271,7 @@ void editorProcessKeypress(int fd) {
         break;
     }
 
-    quit_times = KILO_QUIT_TIMES; /* Reset it to the original value. */
+    quit_times = NOVA_QUIT_TIMES; /* Reset it to the original value. */
 }
 
 int editorFileWasModified(void) {
