@@ -5,7 +5,7 @@
 
 ## Tutorial
 
-
+---
 
 ### Keybindings:
 #### Ctrl-S: Write
@@ -14,13 +14,13 @@
 #### Ctrl-F: Find
 #### Ctrl-H: Help
 
-
+---
 
 ### Keyfeatures:
 #### Page up: Page up
 #### Page down: Page down
 
-
+---
 
 ### Key references:
 #### Ctrl-F:
@@ -28,5 +28,6 @@
 ##### Press <ESC> (Escape) to go back
 ##### Press Enter to stay at the result
 
+---
 
 ### Movement is done by using the up, down, left and right arrows
