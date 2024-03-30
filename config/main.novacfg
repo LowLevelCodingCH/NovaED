@@ -1,0 +1,4 @@
+CONFIG_EXTENSIONS = {a,b,c}
+CONFIG_COLORS     = {a,b,c}
+CONFIG_KEYWORDS   = {a,b,c}
+// The configuration for the nova editor, not yet implemented

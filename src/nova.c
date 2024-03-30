@@ -106,9 +106,15 @@ enum KEY_ACTION{
 void editorSetStatusMessage(const char *fmt, ...);
 
 /* C / C++ */
-char *C_HL_extensions[] = {".hs",".lisp",".erl",".asm",".c",".h",".cpp",".hpp",".cc",".py",".rs",NULL};
+char *C_HL_extensions[] = {".exs",".el",".yaml",".novacfg",".ts",".tsx",".js",".jsx",".java",".jav",".hs",".lisp",".erl",".asm",".c",".h",".cpp",".hpp",".cc",".py",".rs",NULL};
 char *C_HL_keywords[] = {
 	/* C Keywords */
+	"CONFIG_KEYWORDS",
+	"CONFIG_COLORS",
+	"CONFIG_EXTENSIONS",
+	"exit",
+	"exit()",
+	"elif",
 	"*",
 	"+",
 	"/",
